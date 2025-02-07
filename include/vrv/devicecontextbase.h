@@ -27,6 +27,7 @@ class Doc;
 #define AxGREEN 255 << 8
 #define AxCYAN 255 << 8 | 255
 #define AxLIGHT_GREY 127 << 16 | 127 << 8 | 127
+#define AxCSS_LIGHT_GREY 211 << 16 | 211 << 8 | 211
 #undef max
 #undef min
 
