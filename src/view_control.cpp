@@ -490,7 +490,8 @@ void View::DrawAnnotScore(
             dc->DrawPolyline(4, boxOutline);
             dc->SetPen(m_currentColor, 0, AxSOLID, 0, 0, AxCAP_BUTT, AxJOIN_MITER);
             // Not using this->drawRectangle() because this ignores pen and brush
-            dc->DrawRoundedRectangle(ToDeviceContextX(x1), ToDeviceContextY(y+boxHeight), ToDeviceContextX(x2-x1), ToDeviceContextX(boxHeight), 0);
+            dc->DrawRoundedRectangle(ToDeviceContextX(x1), ToDeviceContextY(y + boxHeight), ToDeviceContextX(x2 - x1),
+                ToDeviceContextX(boxHeight), 0);
             break;
         case SPANNING_MIDDLE:
             // Draw a box with  both sides open (to show it continues)
@@ -498,11 +499,12 @@ void View::DrawAnnotScore(
                 x1 -= annotScore->GetStart()->GetDrawingRadius(m_doc);
             }
             dc->DrawLine(ToDeviceContextX(x1), ToDeviceContextY(y), ToDeviceContextX(x2), ToDeviceContextY(y));
-            dc->DrawLine(ToDeviceContextX(x1), ToDeviceContextY(y), ToDeviceContextX(x2),
-                ToDeviceContextY(y + boxHeight));
+            dc->DrawLine(
+                ToDeviceContextX(x1), ToDeviceContextY(y), ToDeviceContextX(x2), ToDeviceContextY(y + boxHeight));
             dc->SetPen(m_currentColor, 0, AxSOLID, 0, 0, AxCAP_BUTT, AxJOIN_MITER);
             // Not using this->drawRectangle() because this ignores pen and brush
-            dc->DrawRoundedRectangle(ToDeviceContextX(x1), ToDeviceContextY(y+boxHeight), ToDeviceContextX(x2-x1), ToDeviceContextX(boxHeight), 0);
+            dc->DrawRoundedRectangle(ToDeviceContextX(x1), ToDeviceContextY(y + boxHeight), ToDeviceContextX(x2 - x1),
+                ToDeviceContextX(boxHeight), 0);
             break;
         case SPANNING_START_END:
             // Draw a closed box
@@ -523,7 +525,8 @@ void View::DrawAnnotScore(
             dc->SetPen(m_currentColor, 0, AxSOLID, 0, 0, AxCAP_BUTT, AxJOIN_MITER);
             dc->SetBrush(AxCSS_LIGHT_GREY, AxSOLID);
             // Not using this->drawRectangle() because this ignores pen and brush
-            dc->DrawRoundedRectangle(ToDeviceContextX(x1), ToDeviceContextY(y + boxHeight), ToDeviceContextX(x2 - x1), ToDeviceContextX(boxHeight), 0);
+            dc->DrawRoundedRectangle(ToDeviceContextX(x1), ToDeviceContextY(y + boxHeight), ToDeviceContextX(x2 - x1),
+                ToDeviceContextX(boxHeight), 0);
             break;
         case SPANNING_END:
             // Draw a box with the left side open to show it continues from previous system
@@ -538,7 +541,8 @@ void View::DrawAnnotScore(
             dc->DrawPolyline(4, boxOutline);
             dc->SetPen(m_currentColor, 0, AxSOLID, 0, 0, AxCAP_BUTT, AxJOIN_MITER);
             // Not using this->drawRectangle() because this ignores pen and brush
-            dc->DrawRoundedRectangle(ToDeviceContextX(x1), ToDeviceContextY(y+boxHeight), ToDeviceContextX(x2-x1), ToDeviceContextX(boxHeight), 0);
+            dc->DrawRoundedRectangle(ToDeviceContextX(x1), ToDeviceContextY(y + boxHeight), ToDeviceContextX(x2 - x1),
+                ToDeviceContextX(boxHeight), 0);
             break;
     }
     dc->ResetPen();
